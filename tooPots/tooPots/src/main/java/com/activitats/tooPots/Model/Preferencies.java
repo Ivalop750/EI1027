@@ -1,4 +1,4 @@
-package com.activitats.tooPots;
+package com.activitats.tooPots.model;
 
 public class Preferencies{
     private short preferenciaId;
