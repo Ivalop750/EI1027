@@ -10,14 +10,14 @@ public class Activitat {
 	Float durada;
 	Date data;
 	Float preu;
-	Integer min_Assistents;
-	Integer max_Assistents;
+	Integer minAssistents;
+	Integer maxAssistents;
 	String lloc;
-	String punt_De_Trobada;
-	Time hora_De_Trobada;
-	String text_Per_Client;
-	String id_Instructor;
-	String nom_Tipus_Activitat;
+	String puntDeTrobada;
+	Time horaDeTrobada;
+	String textPerClient;
+	String idInstructor;
+	String nomTipusActivitat;
 	public String getNomLlarg() {
 		return nomLlarg;
 	}
@@ -54,17 +54,17 @@ public class Activitat {
 	public void setPreu(Float preu) {
 		this.preu = preu;
 	}
-	public Integer getMin_Assistents() {
-		return min_Assistents;
+	public Integer getMinAssistents() {
+		return minAssistents;
 	}
-	public void setMin_Assistents(Integer min_Assistents) {
-		this.min_Assistents = min_Assistents;
+	public void setMinAssistents(Integer minAssistents) {
+		this.minAssistents = minAssistents;
 	}
-	public Integer getMax_Assistents() {
-		return max_Assistents;
+	public Integer getMaxAssistents() {
+		return maxAssistents;
 	}
-	public void setMax_Assistents(Integer max_Assistents) {
-		this.max_Assistents = max_Assistents;
+	public void setMaxAssistents(Integer maxAssistents) {
+		this.maxAssistents = maxAssistents;
 	}
 	public String getLloc() {
 		return lloc;
@@ -72,35 +72,35 @@ public class Activitat {
 	public void setLloc(String lloc) {
 		this.lloc = lloc;
 	}
-	public String getPunt_De_Trobada() {
-		return punt_De_Trobada;
+	public String getPuntDeTrobada() {
+		return puntDeTrobada;
 	}
-	public void setPunt_De_Trobada(String punt_De_Trobada) {
-		this.punt_De_Trobada = punt_De_Trobada;
+	public void setPuntDeTrobada(String puntDeTrobada) {
+		this.puntDeTrobada = puntDeTrobada;
 	}
-	public Time getHora_De_Trobada() {
-		return hora_De_Trobada;
+	public Time getHoraDeTrobada() {
+		return horaDeTrobada;
 	}
-	public void setHora_De_Trobada(Time hora_De_Trobada) {
-		this.hora_De_Trobada = hora_De_Trobada;
+	public void setHoraDeTrobada(Time horaDeTrobada) {
+		this.horaDeTrobada = horaDeTrobada;
 	}
-	public String getText_Per_Client() {
-		return text_Per_Client;
+	public String getTextPerClient() {
+		return textPerClient;
 	}
-	public void setText_Per_Client(String text_Per_Client) {
-		this.text_Per_Client = text_Per_Client;
+	public void setTextPerClient(String textPerClient) {
+		this.textPerClient = textPerClient;
 	}
-	public String getId_Instructor() {
-		return id_Instructor;
+	public String getIdInstructor() {
+		return idInstructor;
 	}
-	public void setId_Instructor(String id_Instructor) {
-		this.id_Instructor = id_Instructor;
+	public void setIdInstructor(String idInstructor) {
+		this.idInstructor = idInstructor;
 	}
-	public String getNom_Tipus_Activitat() {
-		return nom_Tipus_Activitat;
+	public String getNomTipusActivitat() {
+		return nomTipusActivitat;
 	}
-	public void setNom_Tipus_Activitat(String nom_Tipus_Activitat) {
-		this.nom_Tipus_Activitat = nom_Tipus_Activitat;
+	public void setNomTipusActivitat(String nomTipusActivitat) {
+		this.nomTipusActivitat = nomTipusActivitat;
 	}
 	
 }

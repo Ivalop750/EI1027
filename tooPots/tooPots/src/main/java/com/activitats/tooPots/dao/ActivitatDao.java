@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.activitats.tooPots.model.Activitat;
 
-public class ActivtatDao {
+public class ActivitatDao {
 	 
 		private JdbcTemplate jdbcTemplate;
 		private static final class ActivitatMapper implements RowMapper<Activitat> { 
