@@ -14,58 +14,52 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.activitats.tooPots.dao.ClientDao;
 import com.activitats.tooPots.model.Client;
 
-
-
 @Controller
 @RequestMapping("/client")
 public class ClientController {
-	private ClientDao clientDao;
-	
-
 	@Autowired
-	public void setClientDao(ClientDao clientDao) {
-		this.clientDao = clientDao;
-	}
-	@RequestMapping("/list")
+	private ClientDao clientDao;
+
+	@GetMapping("/list")
 	public String listClient(Model model) {
 		model.addAttribute("clients", clientDao.getClients());
 		return "clients/list";
 	}
-	@RequestMapping(value="/list/{idClient}", method = RequestMethod.GET)
-	public String list1Client(Model model, @PathVariable String idClient) {
-		model.addAttribute("client", clientDao.getClient(idClient));
+	@GetMapping(value="/list/{clientId}")
+	public String getClient(Model model, @PathVariable String clientId) {
+		model.addAttribute("clients", clientDao.getClient(clientId));
 		return "clients/list";
 	}
-	@RequestMapping(value = "/add")
+	@GetMapping(value = "/add")
 	public String addClient(Model model) {
 		model.addAttribute("client", new Client());
 		return "client/add";
 	}
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String processAddSubmit(@ModelAttribute("client") Client client, BindingResult bindingResult) {
+	@PostMapping(value = "/add")
+	public String addClient(@ModelAttribute("client") Client client, BindingResult bindingResult) {
 
 		if (bindingResult.hasErrors())
 			return "client/add";
 		clientDao.addClient(client);
 		return "redirect:..list";
 	}
-	@RequestMapping(value="/update/{idClient}", method = RequestMethod.GET)
-	public String editClient(Model model, @PathVariable String idClient) {
-			model.addAttribute("client", clientDao.getClient(idClient));
+	@GetMapping(value="/update/{clientId}")
+	public String update(Model model, @PathVariable String clientId) {
+			model.addAttribute("client", clientDao.getClient(clientId));
 		return "client/update"; 
 	}
-	@RequestMapping(value="/update/{idClient}", method = RequestMethod.POST) 
-	public String processUpdateSubmit(@PathVariable String idClient, 
-                            @ModelAttribute("client") Client client, 
-                            BindingResult bindingResult) {
+	@PostMapping(value="/update/{clientId}")
+	public String update(@PathVariable String clientId,
+						 @ModelAttribute("client") Client client,
+						 BindingResult bindingResult) {
 		if (bindingResult.hasErrors())
 			return "client/update";
 		 clientDao.updateClient(client);
 		 return "redirect:../list"; 
 	  }
-	@RequestMapping(value = "/delete/{idClient}")
-	public String processDelete(@PathVariable String idClient) {
-		clientDao.deleteClient(idClient);
+	@PostMapping(value = "/delete/{clientId}")
+	public String delete(@PathVariable String clientId) {
+		clientDao.deleteClient(clientId);
 		return "redirect:../list";
 	}
 }

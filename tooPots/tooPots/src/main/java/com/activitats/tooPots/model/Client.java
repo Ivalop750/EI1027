@@ -5,20 +5,20 @@ import java.util.Date;
 import java.util.HashSet;
 
 public class Client {
-	String idClient;
+	String clientId;
 	String nom;
 	String email;
 	String sexe;
 	Date dataNaixement; 
 	
-	public String getIdClient() {
-		return idClient;
+	public String getClientId() {
+		return clientId;
 	}
 
 
 
-	public void setIdClient(String id_client) {
-		this.idClient = id_client;
+	public void setClientId(String id_client) {
+		this.clientId = id_client;
 	}
 
 
@@ -76,7 +76,7 @@ public class Client {
 	
 	@Override
 	public String toString() {
-		return "Client[nom=" + nom + ", id_client=" + idClient + ", email="
+		return "Client[nom=" + nom + ", id_client=" + clientId + ", email="
 				+ email + ", sexe=" + sexe + ", data_naixement="
 				+ dataNaixement + "]";
 	} 
